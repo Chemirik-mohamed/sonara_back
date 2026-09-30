@@ -31,7 +31,7 @@ generateRoutes.post("/", sessionMiddleware, async (c) => {
 		);
 	}
 
-	const audio = await generateSpeech(parsed.data.text);
+	const audio = await generateSpeech(parsed.data.text, parsed.data.language);
 
 	return c.body(audio, 200, {
 		"Content-Type": "audio/wav",
